@@ -1,4 +1,8 @@
 // review of loops
+// array data type has forEach()
+// for loop
+// while loop 
+
 
 // introducing arrow functions
 
