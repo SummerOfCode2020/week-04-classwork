@@ -33,3 +33,8 @@ const [firstPerson, secondPerson, ...everyOneElse] = officeWorkers
 
 console.log({ firstPerson, secondPerson, everyOneElse })
 
+// ... Object
+const nameThisWay = cloneTrooper.name
+const { name } = cloneTrooper
+
+console.log({ nameThisWay, name })
