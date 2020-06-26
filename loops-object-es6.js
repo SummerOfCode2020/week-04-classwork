@@ -21,4 +21,15 @@ officeWorkers.forEach((officeWorker) => {
 })
 // more about objects
 
+const cloneTrooper = {
+  name: 'Fin',
+  rank: 'Lead'
+}
+
+cloneTrooper.rank = 'E1'
+
 // triple dot `...` aka destructuring
+const [firstPerson, secondPerson, ...everyOneElse] = officeWorkers
+
+console.log({ firstPerson, secondPerson, everyOneElse })
+
