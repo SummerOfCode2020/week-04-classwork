@@ -6,7 +6,7 @@ function spotEachRebel(rebels) {
    * Fixed, added a forEach loop to add in a phrase for each rebel
    */
   // eslint-disable-next-line no-unused-vars
-  rebels.forEach(function (rebel) {
+  rebels.forEach(() => {
     spottedRebelCalls.push('Look! Rebel scum!')
   })
 
