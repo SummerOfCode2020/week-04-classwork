@@ -3,11 +3,12 @@ function spotEachRebel(rebels) {
 
   /** 
    * @BUG ALERT - We need to be pushing 'Look! Rebel scum!' once for each rebel spotted
-   * Fixed, added for loop to return the phrase once for each rebel
+   * Fixed, added a forEach loop to add in a phrase for each rebel
    */
-  for (let i = 0; i < rebels.length; i++) {
+  // eslint-disable-next-line no-unused-vars
+  rebels.forEach(function (rebel) {
     spottedRebelCalls.push('Look! Rebel scum!')
-  }
+  })
 
   return spottedRebelCalls
 }
