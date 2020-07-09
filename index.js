@@ -5,8 +5,10 @@ function spotEachRebel(rebels) {
    * @BUG ALERT - We need to be pushing 'Look! Rebel scum!' once for each rebel spotted
    * The number of rebels can be expected to exactly equal the number of times that 'Look! Rebel scum!' is included
    */
-  if (rebels) {
-    spottedRebelCalls.push('Look! Rebel scum!')
+  for (let index = 0; index < rebels.length; index++) {
+    if (rebels) {
+      spottedRebelCalls.push('Look! Rebel scum!')
+    }
   }
 
   return spottedRebelCalls
@@ -19,7 +21,7 @@ function shootAtNothing() {
   let shotsAtNothing = []
 
   /** @BUG ALERT - Looping is not quite correct */
-  for (let i = 1; i < 4; i++) {
+  for (let i = 0; i < 4; i++) {
     shotsAtNothing.push('pew')
   }
 
@@ -30,16 +32,23 @@ function shootAtNothing() {
  * Get lines from different movie roles
  * Use the Array `concat` method to put all of the movie script lines together in one
  */
-function deliverStormTroopersEscapeScene(rebels) {
+module.exports = function deliverStormTroopersEscapeScene(rebels) {
   /** combine results form each part of the scene  */
-  const sceneSequence = [...spotEachRebel(rebels), ...shootAtNothing()]
+  let sceneSequence = []
+
+  if (rebels) {
+    sceneSequence = spotEachRebel(rebels).concat(shootAtNothing())
+  }
+  else {
+    sceneSequence = shootAtNothing()
+  }
 
   return sceneSequence
 }
 
-/** 
+/**
   We are not exporting an object.
   We are exporting a single function.
   Only the exported function can be directly used by code that requires this module.
  */
-module.exports = deliverStormTroopersEscapeScene
+
